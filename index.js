@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
-const Entry = require('./models/entry');
+const morgan = require('morgan');
+const entryRoutes = require('./routes/entryRoutes');
 
 const app = express();
 
@@ -10,37 +11,14 @@ const dbURL = 'mongodb://localhost:27017/appdb';
 mongoose
     .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
+        app.listen(3000);
         console.log('connected to db');
-        addEntry();
     })
     .catch((err) => {
         console.log(err);
     });
 
-const addEntry = () => {
-    const entry = new Entry({
-        date: new Date(),
-        time: '19:04',
-        mood: 'Happy',
-        activity: 'Talking with family',
-        hungry: true,
-        location: 'Dinner table',
-        whoWith: 'family',
-        mealType: 'Dinner',
-        foodItems: {
-            name: 'Double Cheeseburger',
-            weight: 300,
-            cookingMethod: 'Fried',
-            foodGroup: ['Carbohydrates', 'Proteins', 'Fats'],
-        },
-    });
+app.use(morgan('dev'));
+app.use(express.urlencoded({ extended: true }));
 
-    entry
-        .save()
-        .then((result) => {
-            console.log(result);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-};
+app.use('/entry', entryRoutes);
