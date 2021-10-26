@@ -16,7 +16,7 @@ const entrySchema = new Schema(
             type: String,
         },
         hungry: {
-            type: Boolean,
+            type: String,
         },
         location: {
             type: String,
@@ -32,7 +32,7 @@ const entrySchema = new Schema(
                 type: String,
             },
             weight: {
-                type: Number,
+                type: String,
             },
             volume: {
                 type: Number,
