@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const API = require('./middleware/apiKeys');
 const entryRoutes = require('./routes/entryRoutes');
 require('dotenv').config();
 
@@ -27,4 +28,4 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/entry', entryRoutes);
+app.use('/entry', API.validateKey, entryRoutes);
