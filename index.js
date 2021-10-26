@@ -6,6 +6,8 @@ const API = require('./middleware/apiKeys');
 const entryRoutes = require('./routes/entryRoutes');
 require('dotenv').config();
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
 //local db connection
@@ -17,7 +19,7 @@ const dbURL = `mongodb+srv://shanehp:${process.env.DB_PASSWORD}@food-diary-db.jj
 mongoose
     .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
-        app.listen(3000);
+        app.listen(PORT);
         console.log('connected to db');
     })
     .catch((err) => {
