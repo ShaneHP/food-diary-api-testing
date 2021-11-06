@@ -1,7 +1,9 @@
 const Entry = require('../models/entry');
 
 const getAllEntries = (req, res) => {
-    Entry.find()
+    const userId = req.query.userId;
+
+    Entry.find({ userId })
         .sort({ createdAt: -1 })
         .then((result) => {
             res.send(result);

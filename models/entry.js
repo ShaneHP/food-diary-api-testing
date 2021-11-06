@@ -3,6 +3,9 @@ const Schema = mongoose.Schema;
 
 const entrySchema = new Schema(
     {
+        userId: {
+            type: String,
+        },
         date: {
             type: String,
         },
