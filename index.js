@@ -2,8 +2,10 @@ const mongoose = require('mongoose');
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const API = require('./middleware/apiKeys');
+const authRoutes = require('./routes/authRoutes');
 const entryRoutes = require('./routes/entryRoutes');
+const { requireAuth } = require('./middleware/authMiddleware');
+
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
@@ -20,7 +22,7 @@ mongoose
     .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
         app.listen(PORT);
-        console.log('connected to db');
+        console.log('connected to db on port ' + PORT);
     })
     .catch((err) => {
         console.log(err);
@@ -30,4 +32,5 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/entry', API.validateKey, entryRoutes);
+app.use(authRoutes);
+app.use('/entry', requireAuth, entryRoutes);
