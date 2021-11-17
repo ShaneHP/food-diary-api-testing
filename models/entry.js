@@ -52,7 +52,12 @@ const entrySchema = new Schema(
                         type: String,
                     },
                     trafficLight: {
-                        type: String,
+                        value: {
+                            type: String,
+                        },
+                        color: {
+                            type: String,
+                        },
                     },
                 },
                 saturates: {
@@ -60,7 +65,12 @@ const entrySchema = new Schema(
                         type: String,
                     },
                     trafficLight: {
-                        type: String,
+                        value: {
+                            type: String,
+                        },
+                        color: {
+                            type: String,
+                        },
                     },
                 },
                 sugar: {
@@ -68,7 +78,12 @@ const entrySchema = new Schema(
                         type: String,
                     },
                     trafficLight: {
-                        type: String,
+                        value: {
+                            type: String,
+                        },
+                        color: {
+                            type: String,
+                        },
                     },
                 },
                 salt: {
@@ -76,7 +91,12 @@ const entrySchema = new Schema(
                         type: String,
                     },
                     trafficLight: {
-                        type: String,
+                        value: {
+                            type: String,
+                        },
+                        color: {
+                            type: String,
+                        },
                     },
                 },
             },
