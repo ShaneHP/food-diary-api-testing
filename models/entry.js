@@ -52,10 +52,10 @@ const entrySchema = new Schema(
                         type: String,
                     },
                     trafficLight: {
-                        value: {
+                        guess: {
                             type: String,
                         },
-                        color: {
+                        actual: {
                             type: String,
                         },
                     },
@@ -65,10 +65,10 @@ const entrySchema = new Schema(
                         type: String,
                     },
                     trafficLight: {
-                        value: {
+                        guess: {
                             type: String,
                         },
-                        color: {
+                        actual: {
                             type: String,
                         },
                     },
@@ -78,10 +78,10 @@ const entrySchema = new Schema(
                         type: String,
                     },
                     trafficLight: {
-                        value: {
+                        guess: {
                             type: String,
                         },
-                        color: {
+                        actual: {
                             type: String,
                         },
                     },
@@ -91,10 +91,10 @@ const entrySchema = new Schema(
                         type: String,
                     },
                     trafficLight: {
-                        value: {
+                        guess: {
                             type: String,
                         },
-                        color: {
+                        actual: {
                             type: String,
                         },
                     },
