@@ -30,6 +30,9 @@ const entrySchema = new Schema(
         mealType: {
             type: String,
         },
+        physicalFeeling: {
+            type: String,
+        },
         foodItems: {
             name: {
                 type: String,
@@ -43,8 +46,59 @@ const entrySchema = new Schema(
             cookingMethod: {
                 type: String,
             },
-            foodGroup: {
-                type: [String],
+            nutritionalValues: {
+                fat: {
+                    weight: {
+                        type: String,
+                    },
+                    trafficLight: {
+                        value: {
+                            type: String,
+                        },
+                        color: {
+                            type: String,
+                        },
+                    },
+                },
+                saturates: {
+                    weight: {
+                        type: String,
+                    },
+                    trafficLight: {
+                        value: {
+                            type: String,
+                        },
+                        color: {
+                            type: String,
+                        },
+                    },
+                },
+                sugar: {
+                    weight: {
+                        type: String,
+                    },
+                    trafficLight: {
+                        value: {
+                            type: String,
+                        },
+                        color: {
+                            type: String,
+                        },
+                    },
+                },
+                salt: {
+                    weight: {
+                        type: String,
+                    },
+                    trafficLight: {
+                        value: {
+                            type: String,
+                        },
+                        color: {
+                            type: String,
+                        },
+                    },
+                },
             },
         },
     },
