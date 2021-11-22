@@ -7,7 +7,7 @@ const entrySchema = new Schema(
             type: String,
         },
         date: {
-            type: String,
+            type: Date,
         },
         time: {
             type: String,
