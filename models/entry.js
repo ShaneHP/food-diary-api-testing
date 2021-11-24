@@ -38,7 +38,7 @@ const entrySchema = new Schema(
                 type: String,
             },
             weight: {
-                type: String,
+                type: Number,
             },
             volume: {
                 type: Number,
@@ -49,7 +49,7 @@ const entrySchema = new Schema(
             nutritionalValues: {
                 fat: {
                     weight: {
-                        type: String,
+                        type: Number,
                     },
                     trafficLight: {
                         value: {
@@ -62,7 +62,7 @@ const entrySchema = new Schema(
                 },
                 saturates: {
                     weight: {
-                        type: String,
+                        type: Number,
                     },
                     trafficLight: {
                         value: {
@@ -75,7 +75,7 @@ const entrySchema = new Schema(
                 },
                 sugar: {
                     weight: {
-                        type: String,
+                        type: Number,
                     },
                     trafficLight: {
                         value: {
@@ -88,7 +88,7 @@ const entrySchema = new Schema(
                 },
                 salt: {
                     weight: {
-                        type: String,
+                        type: Number,
                     },
                     trafficLight: {
                         value: {
