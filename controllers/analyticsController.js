@@ -78,7 +78,12 @@ const getNutrientChart = async (req, res) => {
     }
 };
 
+const getTrafficChart = (req, res) => {
+    res.send('/TODO');
+};
+
 module.exports = {
     getHungryChart,
     getNutrientChart,
+    getTrafficChart,
 };
