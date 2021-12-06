@@ -57,12 +57,12 @@ const updateEntry = (req, res) => {
     const updatedEntry = req.body;
     Entry.findByIdAndUpdate(id, updatedEntry)
         .then((result) => {
-            res.send('updated document');
+            res.send('updated entry');
             console.log(result);
         })
         .catch((err) => {
             console.log(err);
-            res.send('error updating document');
+            res.send('error updating entry');
         });
 };
 
