@@ -18,6 +18,150 @@ module.exports = {
                 description: 'Diary entry ID',
                 example: '619e56565c3dcc177a0425c9',
             },
+            token: {
+                type: 'string',
+                description: 'JWT token which authorizes a user',
+                example:
+                    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODZjNjEzZjVjYWIxOGM5MzBmMzUwMSIsImlhdCI6MTYzNjcyNzc0MH0.dcKyNaTS_fDbaORSzQdVx-Xf65gRUmtJStg7bZMGHls',
+            },
+            auth: {
+                type: 'object',
+                properties: {
+                    email: {
+                        type: 'string',
+                        description: 'User email address',
+                        example: 'john.doe@gmail.com',
+                    },
+                    password: {
+                        type: 'string',
+                        description: 'User password',
+                        example: 'password456',
+                    },
+                },
+            },
+            user: {
+                type: 'object',
+                properties: {
+                    id: {
+                        type: 'string',
+                        description: 'User ID',
+                        example: '6186c613f4cabe8c330f3501',
+                    },
+                    email: {
+                        type: 'string',
+                        description: 'User email address',
+                        example: 'john.doe@gmail.com',
+                    },
+                },
+            },
+            hungryData: {
+                type: 'object',
+                properties: {
+                    hungry: {
+                        type: 'number',
+                        description:
+                            'Number of food items a user ate when they were hungry in the past week',
+                        example: 20,
+                    },
+                    notHungry: {
+                        type: 'number',
+                        description:
+                            'Number of food items a user ate when they were not hungry in the past week',
+                        example: 5,
+                    },
+                },
+            },
+            nutrient: {
+                type: 'string',
+                description: 'A food nutrient',
+                example: 'fat',
+            },
+            trafficChart: {
+                type: 'object',
+                properties: {
+                    green: {
+                        type: 'number',
+                        description:
+                            'The number of food items a user ate with a green value for a specified nutrient',
+                        example: 3,
+                    },
+                    amber: {
+                        type: 'number',
+                        description:
+                            'The number of food items a user ate with an amber value for a specified nutrient',
+                        example: 2,
+                    },
+                    red: {
+                        type: 'number',
+                        description:
+                            'The number of food items a user ate with a red value for a specified nutrient',
+                        example: 1,
+                    },
+                },
+            },
+            dailyNutrientData: {
+                type: 'object',
+                properties: {
+                    totalNutrients: {
+                        type: 'object',
+                        properties: {
+                            fat: {
+                                type: 'number',
+                                description:
+                                    'Weight in grams of fat eaten by a user today',
+                                example: 65,
+                            },
+                            saturates: {
+                                type: 'number',
+                                description:
+                                    'Weight in grams of saturates eaten by a user today',
+                                example: 23,
+                            },
+                            sugar: {
+                                type: 'number',
+                                description:
+                                    'Weight in grams of sugar eaten by a user today',
+                                example: 76,
+                            },
+                            salt: {
+                                type: 'number',
+                                description:
+                                    'Weight in grams of salt eaten by a user today',
+                                example: 7,
+                            },
+                        },
+                    },
+                    dailyRecommended: {
+                        type: 'object',
+                        properties: {
+                            fat: {
+                                type: 'number',
+                                description:
+                                    'Weight in grams of daily recommended fat intake',
+                                example: 70,
+                            },
+                            saturates: {
+                                type: 'number',
+                                description:
+                                    'Weight in grams of daily recommended saturates intake',
+                                example: 20,
+                            },
+                            sugar: {
+                                type: 'number',
+                                description:
+                                    'Weight in grams of daily recommended sugar intake',
+                                example: 90,
+                            },
+                            salt: {
+                                type: 'number',
+                                description:
+                                    'Weight in grams of daily recommended salt intake',
+                                example: 6,
+                            },
+                        },
+                    },
+                },
+            },
             entry: {
                 type: 'object',
                 properties: {

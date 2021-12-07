@@ -3,5 +3,11 @@ module.exports = {
         {
             name: 'Diary entry CRUD operations',
         },
+        {
+            name: 'Authentication operations',
+        },
+        {
+            name: 'Analytics operations',
+        },
     ],
 };

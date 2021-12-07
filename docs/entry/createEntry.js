@@ -16,7 +16,7 @@ module.exports = {
         ],
         requestBody: {
             content: {
-                'application/json': {
+                'application/x-www-form-urlencoded': {
                     schema: {
                         $ref: '#components/schemas/entry',
                     },
