@@ -16,7 +16,7 @@ const app = express();
 // const dbURL = 'mongodb://localhost:27017/appdb';
 
 //hosted connection
-const dbURL = `mongodb+srv://shanehp:${process.env.DB_PASSWORD}@food-diary-db.jjmve.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const dbURL = `mongodb+srv://shanehp:${process.env.DB_PASSWORD}@food-diary-app-b.tyrpx.mongodb.net/food-diary-app-b?retryWrites=true&w=majority`;
 
 mongoose
     .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
