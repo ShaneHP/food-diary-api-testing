@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const entryRoutes = require('./routes/entryRoutes');
+const analyticsRoutes = require('./routes/analyticsRoutes');
 const { requireAuth } = require('./middleware/authMiddleware');
 
 require('dotenv').config();
@@ -34,3 +35,4 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(authRoutes);
 app.use('/entry', requireAuth, entryRoutes);
+app.use('/analytics', requireAuth, analyticsRoutes);
