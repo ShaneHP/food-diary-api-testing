@@ -78,47 +78,47 @@ const getNutrientChart = async (req, res) => {
     }
 };
 
-// const getTrafficChart = async (req, res) => {
-//     const userId = req.query.userId;
-//     const nutrient = req.query.nutrient;
-//     const nutrientPath = `foodItems.nutritionalValues.${nutrient}.trafficLight.value`;
-//     const today = new Date();
-//     today.setHours(0, 0, 0, 0);
+const getTrafficChart = async (req, res) => {
+    const userId = req.query.userId;
+    const nutrient = req.query.nutrient;
+    const nutrientPath = `foodItems.nutritionalValues.${nutrient}.trafficLight.actual.value`;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-//     const queries = [
-//         {
-//             userId,
-//             date: today,
-//             [nutrientPath]: 'Green',
-//         },
-//         {
-//             userId,
-//             date: today,
-//             [nutrientPath]: 'Amber',
-//         },
-//         {
-//             userId,
-//             date: today,
-//             [nutrientPath]: 'Red',
-//         },
-//     ];
+    const queries = [
+        {
+            userId,
+            date: today,
+            [nutrientPath]: 'Green',
+        },
+        {
+            userId,
+            date: today,
+            [nutrientPath]: 'Amber',
+        },
+        {
+            userId,
+            date: today,
+            [nutrientPath]: 'Red',
+        },
+    ];
 
-//     try {
-//         const results = await Promise.all(
-//             queries.map((query) => {
-//                 return Entry.countDocuments(query);
-//             })
-//         );
+    try {
+        const results = await Promise.all(
+            queries.map((query) => {
+                return Entry.countDocuments(query);
+            })
+        );
 
-//         res.send({ green: results[0], amber: results[1], red: results[2] });
-//     } catch (err) {
-//         console.log(err);
-//         res.status(404).send('Resource not found');
-//     }
-// };
+        res.send({ green: results[0], amber: results[1], red: results[2] });
+    } catch (err) {
+        console.log(err);
+        res.status(404).send('Resource not found');
+    }
+};
 
 module.exports = {
     getHungryChart,
     getNutrientChart,
-    // getTrafficChart,
+    getTrafficChart,
 };
